@@ -5,21 +5,28 @@
 			"label": "List Factorio Mods",
 			"type": "shell",
 			"command": "bash",
-			"args": ["./scripts/list_mods.sh"],
+			"args": [
+				"./scripts/list_mods.sh"
+			],
 			"problemMatcher": []
-		  },
-		  {
+		},
+		{
 			"label": "Build and Install WoodFill Mod",
 			"type": "shell",
 			"command": "bash",
-			"args": ["./scripts/zip_copy_mod.sh"],
+			"args": [
+				"./scripts/zip_copy_mod.sh",
+				"--install"
+			],
 			"problemMatcher": []
 		},
 		{
 			"label": "Build WoodFill Mod (No Install)",
 			"type": "shell",
 			"command": "bash",
-			"args": ["./scripts/zip_copy_mod.sh", "--install"],
+			"args": [
+				"./scripts/zip_copy_mod.sh"
+			],
 			"problemMatcher": []
 		}
 	]
