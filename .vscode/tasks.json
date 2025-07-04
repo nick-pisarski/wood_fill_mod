@@ -9,14 +9,14 @@
 			"problemMatcher": []
 		  },
 		  {
-			"label": "Build WoodFill Mod",
+			"label": "Build and Install WoodFill Mod",
 			"type": "shell",
 			"command": "bash",
 			"args": ["./scripts/zip_copy_mod.sh"],
 			"problemMatcher": []
 		},
 		{
-			"label": "Build and Move WoodFill Mod",
+			"label": "Build WoodFill Mod (No Install)",
 			"type": "shell",
 			"command": "bash",
 			"args": ["./scripts/zip_copy_mod.sh", "--install"],

@@ -15,12 +15,18 @@ mod_dependencies="base >= 2.0"
 # Factorio Mod Info
 factorio_mods_folder="$HOME/AppData/Roaming/Factorio/mods"
 
-# Build
-build_name="${mod_name}_${mod_version}.zip"
-local_build="./dist/${build_name}"
-
 # Make info.json
-info_json="  {\n    \"name\": \"$mod_name\",\n    \"version\": \"$mod_version\",\n    \"factorio_version\": \"$factorio_version\",\n    \"title\": \"$mod_title\",\n    \"author\": \"$author\",\n    \"contact\": \"Private\",\n    \"homepage\": \"$homepage_url\",\n    \"description\": \"$mod_description\",\n    \"dependencies\": [\"$mod_dependencies\"]\n  }" 
+info_json="  {
+    \"name\": \"$mod_name\",
+    \"version\": \"$mod_version\",
+    \"factorio_version\": \"$factorio_version\",
+    \"title\": \"$mod_title\",
+    \"author\": \"$author\",
+    \"contact\": \"Private\",
+    \"homepage\": \"$homepage_url\",
+    \"description\": \"$mod_description\",
+    \"dependencies\": [\"$mod_dependencies\"]
+  }"
 
 echo -e "${info_json}" > "${mod_name}/info.json"
 
@@ -31,9 +37,25 @@ echo -e "${info_json}"
 echo -e "\n################\n"
 
 #Zip
-    zip -r "$local_build" "$mod_name"
+# Check if dist folder exists, create if it doesn't
+output_folder="./dist"
+if [ ! -d "$output_folder" ]; then
+    echo "Creating output directory: $output_folder"
+    mkdir -p "$output_folder"
+    echo "Output directory created successfully"
+else
+    echo "Output directory already exists: $output_folder"
+fi
 
-echo "Successfully zipped up $mod_name"
+# Build
+build_name="${mod_name}_${mod_version}.zip"
+local_build="${output_folder}/${build_name}"
+if zip -r "$local_build" "$mod_name"; then
+    echo "Successfully zipped up $mod_name"
+else
+    echo "Error: Failed to zip up $mod_name"
+    exit 1
+fi
 
 # Check if --install argument is provided
 if [[ "$1" == "--install" ]]; then
