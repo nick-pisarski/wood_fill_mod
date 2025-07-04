@@ -7,5 +7,7 @@
     "contact": "Private",
     "homepage": "",
     "description": "Wood to Landfill",
-    "dependencies": ["base >= 2.0"]
+    "dependencies": [
+      "base >= 2.0"
+    ]
   }
