@@ -1,0 +1,11 @@
+  {
+    "name": "wood-fill",
+    "version": "0.1.2",
+    "factorio_version": "2.0",
+    "title": "Wood Fill",
+    "author": "RR",
+    "contact": "Private",
+    "homepage": "",
+    "description": "Wood to Landfill",
+    "dependencies": ["base >= 2.0"]
+  }

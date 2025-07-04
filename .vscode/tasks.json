@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "List Factorio Mods",
+			"type": "shell",
+			"command": "bash",
+			"args": ["./scripts/list_mods.sh"],
+			"problemMatcher": []
+		  },
+		  {
+			"label": "Build WoodFill Mod",
+			"type": "shell",
+			"command": "bash",
+			"args": ["./scripts/zip_copy_mod.sh"],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and Move WoodFill Mod",
+			"type": "shell",
+			"command": "bash",
+			"args": ["./scripts/zip_copy_mod.sh", "--install"],
+			"problemMatcher": []
+		}
+	]
+}
